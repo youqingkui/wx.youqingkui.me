@@ -10,7 +10,8 @@ class Config:
     FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
     FLASKY_MAIL_SENDER = 'Flasky Admin <youqingkui@qq.com>'
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
-
+    WEIXIN_TOKEN = os.environ.get('WEIXIN_TOKEN')
+    print(WEIXIN_TOKEN)
     @staticmethod
     def init_app(app):
         pass
