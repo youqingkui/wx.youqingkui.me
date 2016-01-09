@@ -1,3 +1,3 @@
 #!/bin/sh
-uwsgi --ini `pwd`/runapp.ini
+uwsgi --ini `pwd`/config.ini
 
