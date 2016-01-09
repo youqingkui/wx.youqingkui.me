@@ -8,6 +8,8 @@ from . import main
 from .. import db
 from xml.etree import ElementTree
 
+from app.service.receive_message import ReMsg
+
 @main.before_app_request
 def check_token():
 
@@ -34,12 +36,10 @@ def index():
     query = request.args
     echostr = query.get('echostr', '')
     re_xml = ElementTree.fromstring(request.data)
-    ToUserName = re_xml.getiterator('ToUserName')[0].text
-    FromUserName = re_xml.getiterator('FromUserName')[0].text
-    CreateTime = re_xml.getiterator('CreateTime')[0].text
     MsgType = re_xml.getiterator('MsgType')[0].text
-    Content = re_xml.getiterator('Content')[0].text
-    MsgId = re_xml.getiterator('MsgId')[0].text
+    if MsgType == 'text':
+        ReMsg.re_text(re_xml)
 
-    print(ToUserName, FromUserName, CreateTime, MsgType, Content, MsgId)
+
+
     return echostr
