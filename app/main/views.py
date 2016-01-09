@@ -21,7 +21,7 @@ def index():
     print(s)
     s = ''.join(s)
 
-    if not(hashlib.sha1(s).hexdigest() == signature):
+    if(hashlib.sha1(s).hexdigest() == signature):
         return echostr
 
 
