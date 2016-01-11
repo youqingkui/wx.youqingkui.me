@@ -38,7 +38,7 @@ def index():
     re_xml = ElementTree.fromstring(request.data)
     MsgType = re_xml.getiterator('MsgType')[0].text
     if MsgType == 'text':
-        ReMsg.re_text(re_xml)
+        ReMsg.re_text(re_xml, request.data)
 
 
 
