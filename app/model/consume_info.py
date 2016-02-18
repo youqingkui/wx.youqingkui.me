@@ -10,9 +10,9 @@ class ConsumeInfo(db.Model):
     money = db.Column(db.Float, default=0.00)
     tag_name = db.Column(db.String(12), default='')
     note = db.Column(db.String(255), default='')
-    add_time = db.Column(db.Integer, default=0)
+    add_time = db.Column(db.Integer, default=0, index=True)
     user_open_id = db.Column(db.String(255), default='')
-    create_time = db.Column(db.Integer, default=0)
+    create_time = db.Column(db.Integer, default=0, index=True)
     content_xml = db.Column(db.Text, default=None)
 
     def __str__(self):

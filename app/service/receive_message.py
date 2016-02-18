@@ -32,6 +32,7 @@ class ReMsg(object):
             ci.content_xml = xml_info
             ci.note = content_arr[2] if len(content_arr) >=3 else ''
             ci.tag_name = content_arr[0]
+            ci.user_open_id = FromUserName
             db.session.add(ci)
             db.session.commit()
 
